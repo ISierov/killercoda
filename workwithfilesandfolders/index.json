@@ -1,5 +1,5 @@
 {
-  "title": "Work with files And folders",
+  "title": "Python for DevOps",
   "description": "Demo",
   "difficulty": "beginner",
   "details": {
@@ -103,6 +103,6 @@
     }
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "python3"
   }
 }
