@@ -8,7 +8,10 @@
     },
     "assets": {
       "host01": [
-        {"file": "tests.sh", "target": "~/"}
+        {"file": "users1.xml", "target": "~/example1/"},
+        {"file": "users2.xml", "target": "~/example2/"},
+        {"file": "users.json", "target": "~/example4/"},
+        {"file": "apache.log", "target": "~/example5/"}
       ]
     },
     "steps": [
@@ -35,67 +38,6 @@
       {
         "title": "Step 6",
         "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
-      },
-      {
-        "title": "Step 8",
-        "text": "step8.md"
-      },
-      {
-        "title": "Step 9",
-        "text": "step9.md"
-      },
-      {
-        "title": "Step 10",
-        "text": "step10.md"
-      },
-      {
-        "title": "Step 11",
-        "text": "step11.md"
-      },
-      {
-        "title": "Step 12",
-        "text": "step12.md"
-      },
-      {
-        "title": "Step 13",
-        "text": "step13.md"
-      },
-      {
-        "title": "Step 14",
-        "text": "step14.md"
-      },
-      {
-        "title": "Step 15",
-        "text": "step15.md"
-      },
-      {
-        "title": "Step 16",
-        "text": "step16.md"
-      },
-      {
-        "title": "Step 17",
-        "text": "step17.md"
-      },
-      {
-        "title": "Step 18",
-        "text": "step18.md"
-      },
-      {
-        "title": "Step 19",
-        "text": "step19.md"
-      },
-      {
-        "title": "Step 20",
-        "text": "step20.md"
-      },
-      {
-        "title": "Step 21",
-        "text": "step21.md",
-        "verify": "tests.sh"
       }
     ],
     "finish": {
@@ -103,6 +45,9 @@
     }
   },
   "backend": {
-    "imageid": "python3"
+    "imageid": "ubuntu"
+  },
+  "interface": {
+    "layout": "ide"
   }
 }
