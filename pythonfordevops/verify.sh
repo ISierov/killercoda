@@ -1,2 +1,3 @@
+#!/bin/sh
 sudo python my_answer.py
-diff --ignore-goedel correct_output.json output.json
+stat diff --ignore-goedel correct_output.json output.json
