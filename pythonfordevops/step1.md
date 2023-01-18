@@ -1,4 +1,4 @@
-There is xml file: ***/assets/example1/users1.xml***
+There is xml file: ***users1.xml***
 
 File contain structured list of users.
 The main attributes of the users are:
@@ -11,6 +11,8 @@ The main attributes of the users are:
 Our users are services. The creation of the unprivileged user 
 for each service corresponds to the best practice of 
 configuration servers.
+
+To start coding we should create file with *.py* extension.
 
 First of all, we should import modules to interact with the file system 
 <code>os</code> and for working with xml data
@@ -33,8 +35,13 @@ With simple *if* we can convert type of user to required command.
 
 The last step is to call the user creation function with the appropriate parameters. 
 
+> To run our code we call ```sudo python name_of_file.py```{{exec}} <br>
+> To check write ```cat /etc/passwd```{{exec}}
+
+And if it all correct, we can see our users at the bottom of list.
+
 <details> <summary>Here you can see solution</summary>
-<code>import os<br>
+```import os<br>
 import xml.etree.ElementTree as ET<br>
 tree = ET.parse('users1.xml')<br>
 root = tree.getroot()<br>
@@ -47,5 +54,5 @@ for user in root.findall('user'):<br>
     &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;utype = ''<br>
     &nbsp;&nbsp;&nbsp;&nbsp;os.system('useradd ' + uname + ' ' + utype + ' ' + '--comment "' + udescript +'"')<br>
-</code>
+```{{exec}}
 </details>
