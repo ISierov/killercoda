@@ -1,4 +1,4 @@
-There is xml file: */example1/users1.xml*
+There is xml file: ***/assets/example1/users1.xml***
 
 File contain structured list of users.
 The main attributes of the users are:
@@ -12,10 +12,29 @@ Our users are services. The creation of the unprivileged user
 for each service corresponds to the best practice of 
 configuration servers.
 
+First of all, we should import modules to interact with the file system 
+<code>os</code> and for working with xml data
+(for example <code>xml.etree.ElementTree</code>).
 
+Next, upload our file with the structure with the help of function 
+<code>parse(*'name of file'*)</code>.
 
-<details> <summary>Solution</summary>
-<code>import os <br>
+Return root element of out tree to the variable <code>root</code>.
+
+Create cycle to find all elements with tag *user*.
+> We can do it with findall() function
+
+After, ask a found element its attribute *name* with the help of method 
+<code>get()</code>.
+
+Search values of elements *description* and *type*.
+
+With simple *if* we can convert type of user to required command.
+
+The last step is to call the user creation function with the appropriate parameters. 
+
+<details> <summary>Here you can see solution</summary>
+<code>import os<br>
 import xml.etree.ElementTree as ET<br>
 tree = ET.parse('users1.xml')<br>
 root = tree.getroot()<br>
