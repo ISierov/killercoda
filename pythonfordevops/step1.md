@@ -36,29 +36,34 @@ With simple *if* we can convert type of user to required command.
 The last step is to call the user creation function with the appropriate parameters. 
 
 To run our code we call 
-```
+<code>
 sudo python name_of_file.py
-```{{exec}}
+</code>
 
 To check write 
-```
+<code>
 cat /etc/passwd
-```{{exec}}
+</code>
 
 And if it all correct, we can see our users at the bottom of list.
 
 <details> <summary>Here you can see solution</summary>
-<code>
-import os
+
+```import os
 import xml.etree.ElementTree as ET
 tree = ET.parse('users1.xml')
 root = tree.getroot()
 for user in root.findall('user'):
-uname = user.get('name')
-udescript = user.find('description').text
-utype = user.find('type').text
-utype = '--system'
-else:
-utype = ''
-os.system('useradd ' + uname + ' ' + utype + ' ' + '--comment "' + udescript +'"')
+  uname = user.get('name')
+  udescript = user.find('description').text
+  utype = user.find('type').text
+  if utype=='system':
+    utype = '--system'
+  else:
+    utype = ''
+  os.system('useradd ' + uname + ' ' + utype + ' ' + '--comment "' + udescript +'"')
+```
+
 </details>
+
+

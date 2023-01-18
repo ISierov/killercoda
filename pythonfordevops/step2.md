@@ -25,38 +25,40 @@ block of data which we are concerned. We prepare parameters to call the command.
 has string type. Reading element - we check if it's sub-element with name *description*
 or *type*. If yes, then we store the content.
 
-<details> <summary>Here you can see solution</summary> <code>
-import os, xml.sax<br>
-<br>
-class User:<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;uname = ''<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;udescr = ''<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;utype = ''<br>
-<br>
-class MyContentHandler(xml.sax.ContentHandler):<br>
-<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;def startElement(self, name, attrs):<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.currentdata = name<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if name == 'user':<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User.uname = attrs.get('name')<br>
-<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;def endElement(self, name):<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if name == 'user':<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if User.utype=='system':<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User.utype = '--system'<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User.utype = ''<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.system('useradd ' + User.uname + ' ' + User.utype + ' ' + '--comment "' + User.udescr +'"')<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.currentdata = ''<br>
-<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;def characters(self, content):<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.currentdata == "description":<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User.udescr = content<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif self.currentdata == "type":<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User.utype = content<br>
-<br>
-<br>
-input_file = open('users2.xml')<br>
-xml.sax.parse(input_file, MyContentHandler())<br>
-input_file.close()<br>
-</code></details>
+<details> <summary>Here you can see solution</summary> 
+
+```
+import os, xml.sax
+
+class User:
+    uname = ''
+    udescr = ''
+    utype = ''
+
+class MyContentHandler(xml.sax.ContentHandler):
+    def startElement(self, name, attrs):
+        self.currentdata = name
+        if name == 'user':
+            User.uname = attrs.get('name')
+
+    def endElement(self, name):
+        if name == 'user':
+            if User.utype=='system':
+                User.utype = '--system'
+            else:
+                User.utype = ''
+            os.system('useradd ' + User.uname + ' ' + User.utype + ' ' + '--comment "' + User.udescr +'"')
+        self.currentdata = ''
+
+    def characters(self, content):
+        if self.currentdata == "description":
+            User.udescr = content
+        elif self.currentdata == "type":
+            User.utype = content
+
+
+input_file = open('users2.xml')
+xml.sax.parse(input_file, MyContentHandler())
+input_file.close()
+```
+</details>
