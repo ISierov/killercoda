@@ -11,7 +11,8 @@
         {"file": "users1.xml", "target": "/root"},
         {"file": "users2.xml", "target": "/root"},
         {"file": "users.json", "target": "/root"},
-        {"file": "apache.log", "target": "/root"}
+        {"file": "apache.log", "target": "/root"},
+        {"file": "input.xml", "target": "/root"}
       ]
     },
     "steps": [
