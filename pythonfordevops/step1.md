@@ -1,4 +1,4 @@
-There is xml file: ***users1.xml***
+This is xml file: ***users1.xml***
 
 File contain structured list of users.
 The main attributes of the users are:
@@ -24,7 +24,7 @@ Next, upload our file with the structure with the help of function
 Return root element of out tree to the variable <code>root</code>.
 
 Create cycle to find all elements with tag *user*.
-> We can do it with findall() function
+> We can do it with <code>root.findall('user')</code> function
 
 After, ask a found element its attribute *name* with the help of method 
 <code>get()</code>.
@@ -35,12 +35,12 @@ With simple *if* we can convert type of user to required command.
 
 The last step is to call the user creation function with the appropriate parameters. 
 
-To run our code we call 
+### To run our code we call 
 <code>
 sudo python name_of_file.py
 </code>
 
-To check write 
+### To check write 
 <code>
 cat /etc/passwd
 </code>

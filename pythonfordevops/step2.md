@@ -1,5 +1,7 @@
 The next example: the task is the same, but we implement it using *sax* model.
 
+We can use the same file or ***users2.xml*** with the same structure.
+
 Let's import the needed libraries.
 
 We need also open our file.
@@ -24,6 +26,8 @@ block of data which we are concerned. We prepare parameters to call the command.
 - <code>characters</code> runs while reading an element. Input parameter - *content*
 has string type. Reading element - we check if it's sub-element with name *description*
 or *type*. If yes, then we store the content.
+
+To run or check code use same command as in the previous step.
 
 <details> <summary>Here you can see solution</summary> 
 
