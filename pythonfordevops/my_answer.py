@@ -2,7 +2,7 @@ import json
 import xml.etree.ElementTree as ET
 
 # parse the XML file
-tree = ET.parse("assets/input.xml")
+tree = ET.parse("input.xml")
 root = tree.getroot()
 
 # create an empty dictionary to store the data
@@ -17,7 +17,6 @@ for child in root:
             if child.tag == 'Tools':
                 data[child.tag][subchild.attrib['name']] = subchild.attrib['version']
             else:
-                print(child.tag, subchild.attrib['name'])
                 data[child.tag][subchild.attrib['name']] = subchild.attrib['type']
     else:
         data[child.tag] = child.text
