@@ -35,7 +35,8 @@ With simple *if* we can convert type of user to required command.
 
 The last step is to call the user creation function with the appropriate parameters. 
 
-> To run our code we call ```sudo python name_of_file.py```{{exec}} <br>
+> To run our code we call ```sudo python name_of_file.py```{{exec}}
+>
 > To check write ```cat /etc/passwd```{{exec}}
 
 And if it all correct, we can see our users at the bottom of list.
