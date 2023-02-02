@@ -32,7 +32,7 @@ The response of json format we pass to json parser and print result status.
 ```
 import json, urllib.request
 
-jenkins_url = 'http://192.168.68.142:8080'
+jenkins_url = ({{TRAFFIC_HOST1_80}})
 jenkins_job = '/lastBuild/api/json'
 
 data = json.load(urllib.request.urlopen(jenkins_url + jenkins_job))
