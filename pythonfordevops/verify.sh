@@ -21,4 +21,5 @@ if [ -n "$differences" ]; then
   echo "$differences" >> $logsForStudent
 else
   echo "The files $file1 and $file2 are identical." >> $logsForStudent
+  exit 1
 fi
