@@ -2,7 +2,7 @@ import json
 import xml.etree.ElementTree as ET
 
 # parse the XML file
-tree = ET.parse("assets/input.xml")
+tree = ET.parse("input.xml")
 root = tree.getroot()
 
 # create an empty dictionary to store the data
