@@ -14,7 +14,7 @@
         {"file": "apache.log", "target": "/root"},
         {"file": "input.xml", "target": "/root"},
         {"file": "verify.sh", "target": "~/"},
-        {"file": "correct_output.json", "target": "ttt/"}
+        {"file": "correct_output.json", "target": "/ttt"}
       ]
     },
     "steps": [
