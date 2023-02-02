@@ -8,12 +8,17 @@ then rm -rf $logsForStudent;
 fi
 touch $logsForStudent
 
+# The names of the two files to compare
+file1="correct_output.json"
+file2="output.json"
 
-# If correct you answer
-if diff --ignore-all-space correct_output.json output.json;
-then
-  echo "The files are identical." >> $logsForStudent
+# Use the diff command to compare the files
+differences=$(diff $file1 $file2)
+
+# If the diff command returns a non-empty string, the files are different
+if [ -n "$differences" ]; then
+  echo "The following differences were found between $file1 and $file2:" >> $logsForStudent
+  echo "$differences" >> $logsForStudent
 else
-  echo "You have errors! The files are not identical." >> $logsForStudent
-  exit 1
+  echo "The files $file1 and $file2 are identical." >> $logsForStudent
 fi
