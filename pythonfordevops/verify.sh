@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 logsForStudent='log'
 forTestsBashFile = '/ttt/FilesForTests/bash.sh'
 
@@ -16,11 +15,11 @@ file2="output.json"
 
 # Use the diff command to compare the files
 differences=$(diff --ignore-all-space $file1 $file2)
+echo $differences >> $logsForStudent
 
 # If the diff command returns a non-empty string, the files are different
 if [ -n "$differences" ]; then
-  echo "The following differences were found between $file1 and $file2:" >> $logsForStudent
-  echo "$differences" >> $logsForStudent
+   echo "The files $file1 and $file2 are not identical." >> $logsForStudent
   exit 1
 else
   echo "The files $file1 and $file2 are identical." >> $logsForStudent
