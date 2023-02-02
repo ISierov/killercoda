@@ -1,15 +1,17 @@
 #!/bin/bash
 
-# Log for student file
-logsForStudent='log'
 
+logsForStudent='log'
+forTestsBashFile = '/ttt/FilesForTests/bash.sh'
+
+# Log for student file
 if [ -f $logsForStudent ];
 then rm -rf $logsForStudent;
 fi
 touch $logsForStudent
 
 # The names of the two files to compare
-file1="correct_output.json"
+file1="/ttt/correct_output.json"
 file2="output.json"
 
 # Use the diff command to compare the files
