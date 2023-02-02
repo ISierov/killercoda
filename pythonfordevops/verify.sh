@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Log for student file
+logsForStudent='log'
+
 if [ -f $logsForStudent ];
 then rm -rf $logsForStudent;
 fi
