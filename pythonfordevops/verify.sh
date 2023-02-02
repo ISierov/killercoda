@@ -17,6 +17,11 @@ file2="output.json"
 differences=$(diff --ignore-all-space $file1 $file2)
 echo $differences >> $logsForStudent
 
+# Check if output.json exist
+if [ ! -f "$file2" ]; then
+  exit 1
+fi
+
 # If the diff command returns a non-empty string, the files are different
 if [ -n "$differences" ]; then
    echo "The files $file1 and $file2 are not identical." >> $logsForStudent
