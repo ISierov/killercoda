@@ -9,11 +9,11 @@ fi
 touch $logsForStudent
 
 # The names of the two files to compare
-file1="correct_output.json"
+file1="assets/correct_output.json"
 file2="output.json"
 
 # Use the diff command to compare the files
-differences=$(diff $file1 $file2)
+differences=$(diff --ignore-all-space $file1 $file2)
 
 # If the diff command returns a non-empty string, the files are different
 if [ -n "$differences" ]; then
