@@ -10,7 +10,7 @@ touch $logsForStudent
 
 
 # If correct you answer
-if diff --ignore-all-space correct_output.json output.json;
+if [diff --ignore-all-space correct_output.json output.json];
 then
   echo "The files are identical." >> $logsForStudent
 else
