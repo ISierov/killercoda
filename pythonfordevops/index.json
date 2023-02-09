@@ -4,7 +4,8 @@
   "difficulty": "beginner",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+       "background": "back.sh"
     },
     "assets": {
       "host01": [

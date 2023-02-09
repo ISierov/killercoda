@@ -4,20 +4,18 @@ We have some Continuous Integration server - **Jenkins**.
 
 The task: find out the status of the last project build - it is successful or not.
 
-For start, we will prepare environment with Jenkins server running as a Docker Container:
-<code> docker run -d -u root --rm --name jenkins -p 8080:8080 
--p 50000:50000 --entrypoint bash jenkins:2.46.2-alpine -c "tail -F /jenkins.log" </code>
+***
+docker run -d -u root --rm --name jenkins -p 8080:8080 
+-p 50000:50000 --entrypoint bash jenkins:2.46.2-alpine -c "tail -F /jenkins.log" 
 
-Our next step:
-<code> docker exec -d jenkins bash -c 'git clone https://github.com/oveits/jenkins_home_alpine 
+docker exec -d jenkins bash -c 'git clone https://github.com/oveits/jenkins_home_alpine 
 && export JENKINS_HOME=$(pwd)/jenkins_home_alpine && java -jar /usr/share/jenkins/jenkins.war 2>&1 
-1>/jenkins.log &' </code>
+1>/jenkins.log &'
 
-<code> docker exec -it jenkins bash -c "echo 'Build succeeded' && exit 0" </code>
+docker exec -it jenkins bash -c "echo 'Build succeeded' && exit 0"
 
-curl -X POST http://0.0.0.0:8080/job/job_name/build
-
-So, form a request to the appropriate url-address.
+curl -X POST http://0.0.0.0:8080/job/job_name/build 
+***
 
 The function <code>urlopen</code> from loaded <code>urllib.request</code> library can help us.
 
