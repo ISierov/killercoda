@@ -17,6 +17,8 @@ docker exec -it jenkins bash -c "echo 'Build succeeded' && exit 0"
 curl -X POST http://0.0.0.0:8080/job/job_name/build 
 ***
 
+[ACCESS JENKINS]({{TRAFFIC_HOST1_8080}})
+
 The function <code>urlopen</code> from loaded <code>urllib.request</code> library can help us.
 
 > In some sources you may see the <code>urllib2</code> library, but the 
