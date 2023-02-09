@@ -23,8 +23,8 @@ The response of json format we pass to json parser and print result status.
 ```
 import json, urllib.request
 
-jenkins_url = ('{{TRAFFIC_HOST1_80}}')
-jenkins_job = '/job/hello/lastBuild/api/json'
+jenkins_url = ('{{TRAFFIC_HOST1_8080}}')
+jenkins_job = ('/job/hello/lastBuild/api/json')
 
 data = json.load(urllib.request.urlopen(jenkins_url + jenkins_job))
 print(data['result'])
