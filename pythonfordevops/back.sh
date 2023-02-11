@@ -12,4 +12,4 @@
 #docker run --rm -it openjdk:11 java -jar jenkins-cli.jar -s https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.com/
 #curl -o jenkins-cli.jar https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.co/jnlpJars/jenkins-cli.jar
 
-echo https://host1:8080 >> log.txt
+echo {{TRAFFIC_HOST1_8080}} >> link.txt
