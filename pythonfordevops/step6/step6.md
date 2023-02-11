@@ -10,19 +10,19 @@ Your Jenkins url:
 
 Let create our build by Jenkins:
 
-![Picture 1](step1.png)
+![Picture 1](../assets/step1.png)
 
 Enter name ("hello" for example):
 
-![Picture 1](step2.png)
+![Picture 1](../assets/step2.png)
 
 Just scroll down and press "Save":
 
-![Picture 3](step3.png)
+![Picture 3](../assets/step3.png)
 
 And start build now:
 
-![Picture 4](step4.png)
+![Picture 4](../assets/step4.png)
 
 Directory to get last build status API of 'hello' project:
 <code>/job/hello/lastBuild/api/json</code>
