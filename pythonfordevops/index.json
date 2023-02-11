@@ -4,7 +4,7 @@
   "difficulty": "beginner",
   "details": {
     "intro": {
-      "text": "intro.md",
+      "text": "intro/intro.md",
        "background": "step6/back.sh"
     },
     "assets": {
@@ -49,7 +49,7 @@
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "finish/finish.md"
     }
   },
   "backend": {
