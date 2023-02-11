@@ -5,18 +5,23 @@ We have some Continuous Integration server - **Jenkins**.
 The task: find out the status of the last project build - it is successful or not.
 
 Your Jenkins url:
+
 [ACCESS JENKINS]({{TRAFFIC_HOST1_8080}})
 
 Let create our build by Jenkins:
+
 ![Picture 1](/pythonfordevops/assets/step1.png)
 
 Enter name ("hello" for example):
+
 ![Picture 2](/pythonfordevops/assets/step2.png)
 
 Just scroll down and press "Save":
+
 ![Picture 3](/pythonfordevops/assets/step3.png)
 
 And start build now:
+
 ![Picture 4](/pythonfordevops/assets/step4.png)
 
 Directory to get last build status API of 'hello' project:
