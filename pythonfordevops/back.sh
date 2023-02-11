@@ -8,9 +8,8 @@
 #docker run -d -p 8080:8080 -v jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Djenkins.install.runSetupWizard=false" --name jenkins jenkins/jenkins:lts
 
 #java -jar jenkins-cli.jar -s https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.com/
-#java -jar jenkins-cli.jar -s https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.com/ update-job hello < ne_config.xml
 
 #docker run --rm -it openjdk:11 java -jar jenkins-cli.jar -s https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.com/
 #curl -o jenkins-cli.jar https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.co/jnlpJars/jenkins-cli.jar
 
-echo https://host1:8080
+echo https://host1:8080 >> log.txt
