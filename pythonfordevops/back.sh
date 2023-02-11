@@ -13,14 +13,4 @@
 #docker run --rm -it openjdk:11 java -jar jenkins-cli.jar -s https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.com/
 #curl -o jenkins-cli.jar https://b8bd8c51-0fc7-4190-8770-6a37eb817013-10-244-29-162-8080.spch.r.killercoda.co/jnlpJars/jenkins-cli.jar
 
-cd /root
-docker volume create jenkins_home
-git clone https://github.com/softservedata/devopsjen.git
-cp -R devopsjen/.jenkins/* /var/lib/docker/volumes/jenkins_home/_data
-sleep 2
-chown -R ubuntu:ubuntu /var/lib/docker/volumes/jenkins_home
-cd devopsjen
-docker build -t alpinejenkins .
-docker run --rm --detach --name jenkins_server -p 8080:8080 -v jenkins_home:/root/.jenkins alpinejenkins
-
-curl http://host1:8080/job/hello/build
+echo https://host1:8080
