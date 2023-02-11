@@ -5,7 +5,7 @@
   "details": {
     "intro": {
       "text": "intro.md",
-       "background": "back.sh"
+       "background": "step6/back.sh"
     },
     "assets": {
       "host01": [
