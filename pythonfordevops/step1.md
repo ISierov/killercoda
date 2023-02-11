@@ -49,7 +49,8 @@ And if it all correct, we can see our users at the bottom of list.
 
 <details> <summary>Here you can see solution</summary>
 
-```import os
+```
+import os
 import xml.etree.ElementTree as ET
 tree = ET.parse('users1.xml')
 root = tree.getroot()

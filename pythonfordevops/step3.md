@@ -78,10 +78,10 @@ for line in import_file:
     type_node.appendChild(doc.createTextNode(utype))
 
 
-export_file.write(doc.toprettyxml(indent="    ", encoding="utf-8"))
+export_file.write(doc.toprettyxml(indent="    "))
 
-import_file.close();
-export_file.close();
+import_file.close()
+export_file.close()
 ```
 
 </details>
