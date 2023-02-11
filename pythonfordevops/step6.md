@@ -7,8 +7,21 @@ The task: find out the status of the last project build - it is successful or no
 Your Jenkins url:
 [ACCESS JENKINS]({{TRAFFIC_HOST1_8080}})
 
+Let create our build by Jenkins:
+![Picture 1](../assets/step1.png)
+
+Enter name ("hello" for example):
+![Picture 2](../assets/step2.png)
+
+Just scroll down and press "Save":
+![Picture 3](../assets/step3.png)
+
+And start build now:
+![Picture 4](../assets/step4.png)
+
 Directory to get last build status API of 'hello' project:
 <code>/job/hello/lastBuild/api/json</code>
+You can write number of needed build instead 'lastBuild'.
 
 The function <code>urlopen</code> from loaded <code>urllib.request</code> library can help us.
 
