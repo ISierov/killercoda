@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<data>
+    <user name='hudson'>
+        <description>Hudson service on tomcat</description>
+        <type>system</type>
+    </user>
+    <user name='sonar'>
+        <description>SonarQube service</description>
+        <type>system</type>
+    </user>
+    <user name='mysql'>
+        <description>MySql database  service</description>
+        <type>system</type>
+    </user>
+    <user name='main'>
+        <description>Some user for non admin working</description>
+        <type>normal</type>
+    </user>
+</data>

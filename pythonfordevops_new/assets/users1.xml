@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<data>
+    <user name='apache'>
+        <description>Apache service</description>
+        <type>system</type>
+    </user>
+    <user name='nginx'>
+        <description>Nginx service</description>
+        <type>system</type>
+    </user>
+    <user name='tomcat'>
+        <description>Tomcat service</description>
+        <type>system</type>
+    </user>
+    <user name='jenkins'>
+        <description>Jenkins on tomcat</description>
+        <type>system</type>
+    </user>
+    <user name='cusr'>
+        <description>Some user for connection</description>
+        <type>normal</type>
+    </user>
+</data>

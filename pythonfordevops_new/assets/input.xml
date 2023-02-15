@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DevOps>
+  <Tools>
+    <Tool name="Git" version="2.30.2"/>
+    <Tool name="Jenkins" version="2.89.4"/>
+    <Tool name="Ansible" version="2.10.4"/>
+  </Tools>
+  <Pipeline>
+    <Step name="Upload artifacts" type="Jenkins-Artifactory plugin"/>
+    <Step name="Configure environment" type="Ansible"/>
+    <Step name="Deploy to server" type="Ansible"/>
+  </Pipeline>
+  <Users>
+    <user name='apache' type="system"/>
+    <user name='nginx' type="system"/>
+    <user name='main' type="normal"/>
+  </Users>
+</DevOps>
