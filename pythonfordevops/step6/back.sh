@@ -1,10 +1,10 @@
 #!/bin/bash
 cd /root
 docker volume create jenkins_home
-git clone https://github.com/ISierov/jenkins_empty.git
-cp -R devopsjen/.jenkins/* /var/lib/docker/volumes/jenkins_home/_data
-sleep 2
-chown -R ubuntu:ubuntu /var/lib/docker/volumes/jenkins_home
-cd devopsjen
-docker build -t alpinejenkins .
-docker run --rm --detach --name jenkins_server -p 8080:8080 -v jenkins_home:/root/.jenkins alpinejenkins
+git clone 123456
+cd jenkins_empty
+docker build -t myjenkins .
+docker run -d -p 8080:8080 myjenkins
+sleep 20
+wget http://host1:8080/jnlpJars/jenkins-cli.jar
+java -jar jenkins-cli.jar -s http://host1:8080/ -webSocket build hello
