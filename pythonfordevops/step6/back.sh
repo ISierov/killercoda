@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /root
 docker volume create jenkins_home
-git clone 123456
+git clone https://github.com/ISierov/jenkins_empty.git
 cd jenkins_empty
 docker build -t myjenkins .
 docker run -d -p 8080:8080 myjenkins
