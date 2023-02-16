@@ -1,17 +1,10 @@
 #!/bin/bash
-
-
-
-# Build the Jenkins Docker image
-docker build -t jenkins .
-
-# Create the jenkins_data directory if it doesn't exist
-if [ ! -d "$HOME/jenkins_data" ]; then
-  mkdir "$HOME/jenkins_data"
-fi
-
-cd $HOME/jenkins_data
+cd /root
+docker volume create jenkins_home
 git clone https://github.com/ISierov/jenkins_empty.git
-
-# Start a Docker container from the my-jenkins image
-docker run -d -p 8080:8080 -v "$HOME/jenkins_data/jenkins_empty:/var/jenkins_home" jenkins
+cp -R devopsjen/.jenkins/* /var/lib/docker/volumes/jenkins_home/_data
+sleep 2
+chown -R ubuntu:ubuntu /var/lib/docker/volumes/jenkins_home
+cd devopsjen
+docker build -t alpinejenkins .
+docker run --rm --detach --name jenkins_server -p 8080:8080 -v jenkins_home:/root/.jenkins alpinejenkins
