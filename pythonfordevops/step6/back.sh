@@ -1,5 +1,17 @@
 #!/bin/bash
 
-docker run -d -u root --rm --name jenkins -p 8080:8080 -p 50000:50000 --entrypoint bash jenkins:2.46.2-alpine -c "tail -F /jenkins.log"
 
-docker exec -d jenkins bash -c 'git clone https://github.com/ISierov/jenkins_empty && export JENKINS_HOME=$(pwd)/jenkins_empty && java -jar /usr/share/jenkins/jenkins.war 2>&1 1>/jenkins.log &'
+
+# Build the Jenkins Docker image
+docker build -t jenkins .
+
+# Create the jenkins_data directory if it doesn't exist
+if [ ! -d "$HOME/jenkins_data" ]; then
+  mkdir "$HOME/jenkins_data"
+fi
+
+cd $HOME/jenkins_data
+git clone https://github.com/ISierov/jenkins_empty.git
+
+# Start a Docker container from the my-jenkins image
+docker run -d -p 8080:8080 -v "$HOME/jenkins_data/jenkins_empty:/var/jenkins_home" jenkins
