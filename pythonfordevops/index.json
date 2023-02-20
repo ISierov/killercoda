@@ -43,6 +43,10 @@
         "text": "step6/step6.md"
       },
       {
+        "title": "Step 6.1",
+        "text": "step6.1/step6_1.md"
+      },
+      {
         "title": "Last task",
         "text": "step7/step7.md",
         "verify": "step7/verify.sh"

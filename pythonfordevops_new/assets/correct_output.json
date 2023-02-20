@@ -1,1 +1,0 @@
-{"Tools": {"Git": "2.30.2", "Jenkins": "2.89.4", "Ansible": "2.10.4"}, "Pipeline": {"Upload artifacts": "Jenkins-Artifactory plugin", "Configure environment": "Ansible", "Deploy to server": "Ansible"}, "Users": {"apache": "system", "nginx": "system", "main": "normal"}}

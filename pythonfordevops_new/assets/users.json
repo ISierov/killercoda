@@ -1,5 +1,0 @@
-{"users":[
-    {"name":"puppet", "description":"Puppet service", "type":"system"},
-    {"name":"nexus", "description":"Sonnatype nexus on tomcat", "type":"system"},
-    {"name":"ldap", "description":"Some user for connect to ldap", "type":"normal"}
-]}
