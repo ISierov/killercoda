@@ -6,35 +6,56 @@ The task: find out the status of the last project build - it is successful or no
 
 Your Jenkins url:
 
-[Jenkins url]({{TRAFFIC_HOST1_8080}})
+[Jenkins url]({{TRAFFIC_HOST1_8080}}) 
+(if does not work, try again in a few minutes)
 
-Directory to get last build status API of 'hello' project:
+To accomplish this task, we should 
+import <code>json, requests</code> modules.
+
+Also, we should know how Jenkins API work. In our case,
+directory to get last build status API of 'hello' project:
 <code>/job/hello/lastBuild/api/json</code>
 You can write number of needed build instead 'lastBuild'.
 
-Your credentionals: 
+Access to response should be from existing user. 
+We have one with the following credentials:
 - login: <code>admin</code> 
-- password: <code>admin</code>
+- password: <code>1234</code>
 
-The function <code>urlopen</code> from loaded <code>urllib.request</code> library can help us.
+Using <code>requests.get(url, auth=(username, password))</code>
+method we can collect all necessary information.
 
-> In some sources you may see the <code>urllib2</code> library, but the 
-> module was split into several modules in Python 3 called 
-> <code>urllib.request</code> and <code>urllib.error</code>.
+> Recommend use <code>try .. catch</code> or <code>if .. else</code> block to
+> check if the response status is **OK**
 
 The response of json format we pass to json parser and print result status.
 
 <details> <summary>Here you can see solution</summary>
 
 ```
-import json, urllib.request
+import requests
+import json
 
-jenkins_url = ('{{TRAFFIC_HOST1_8080}}')
-jenkins_job = ('/job/hello/lastBuild/api/json')
+jenkins_url = '{{TRAFFIC_HOST1_8080}}'
+job_name = 'hello'
 
-data = json.load(urllib.request.urlopen(jenkins_url + jenkins_job))
-print(data['result'])
+username = 'admin'
+password = '1234'
+
+api_url = f'{jenkins_url}/job/{job_name}/lastBuild/api/json'
+response = requests.get(api_url, auth=(username, password))
+
+if response.status_code == 200:
+    # Check if the response body is not empty
+    if response.text:
+        data = json.loads(response.text)
+        # Extract the build status from the JSON data
+        status = data['result']
+        # Print the build status
+        print(f'The last build status for job {job_name} is {status}')
+    else:
+        print(f'Response body is empty')
+else:
+    print(f'Response returned status code {response.status_code}')
 ```
 </details>
-
-In this task we also could use appropriate libraries.
