@@ -17,19 +17,19 @@
     "steps": [
       {
         "title": "JSON",
-        "text": "json/step1.md"
+        "text": "json/json.md"
       },
       {
         "title": "CSV",
-        "text": "csv/step2.md"
+        "text": "csv/csv.md"
       },
       {
         "title": "XML",
-        "text": "xml/step3.md"
+        "text": "xml/xml.md"
       },
       {
         "title": "YAML",
-        "text": "yaml/step4.md"
+        "text": "yaml/yaml.md"
       }
     ],
     "finish": {

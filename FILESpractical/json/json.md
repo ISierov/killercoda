@@ -1,4 +1,4 @@
-The json module in Python provides several 
+The ***json*** module in Python provides several 
 methods for encoding and decoding JSON data.
 
 - json.dumps(): This method converts a Python 
@@ -31,7 +31,6 @@ json_string = '{"name": "John", "age": 25, "is_student": true, "courses": ["Math
 
 data = json.loads(json_string)
 print(data)
-
 ```
 - json.dump(): This method writes a data to a file in JSON format.
 ```Python
