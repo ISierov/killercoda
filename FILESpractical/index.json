@@ -1,0 +1,45 @@
+{
+  "title": "Working with different types of files in Python",
+  "description": "SandBox",
+  "difficulty": "beginner",
+  "details": {
+    "intro": {
+      "text": "intro/intro.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "example.xml", "target": "/root"},
+        {"file": "example.csv", "target": "/root"},
+        {"file": "example.json", "target": "/root"},
+        {"file": "example.yaml", "target": "/root"}
+      ]
+    },
+    "steps": [
+      {
+        "title": "JSON",
+        "text": "json/step1.md"
+      },
+      {
+        "title": "CSV",
+        "text": "csv/step2.md"
+      },
+      {
+        "title": "XML",
+        "text": "xml/step3.md"
+      },
+      {
+        "title": "YAML",
+        "text": "yaml/step4.md"
+      }
+    ],
+    "finish": {
+      "text": "finish/finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "interface": {
+    "layout": "ide"
+  }
+}

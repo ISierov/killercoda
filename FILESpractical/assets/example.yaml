@@ -1,0 +1,24 @@
+# This is a comment in YAML
+people:
+  - name: John Smith
+    age: 35
+    hobbies:
+      - reading
+      - hiking
+      - cooking
+    address:
+      street: 123 Main St
+      city: Anytown
+      state: CA
+      zip: 12345
+  - name: Jane Doe
+    age: 27
+    hobbies:
+      - swimming
+      - painting
+      - traveling
+    address:
+      street: 456 Park Ave
+      city: Somewhereville
+      state: NY
+      zip: 67890

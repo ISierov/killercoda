@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <book id="1">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <year>1997</year>
+  </book>
+  <book id="2">
+    <title>Harry Potter and the Chamber of Secrets</title>
+    <author>J.K. Rowling</author>
+    <year>1998</year>
+  </book>
+  <book id="3">
+    <title>Harry Potter and the Prisoner of Azkaban</title>
+    <author>J.K. Rowling</author>
+    <year>1999</year>
+  </book>
+</catalog>

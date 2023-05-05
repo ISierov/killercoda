@@ -1,0 +1,16 @@
+{
+    "name": "John",
+    "age": 25,
+    "is_student": true,
+    "courses": [
+        "Math",
+        "Science",
+        "History"
+    ],
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+    }
+}
