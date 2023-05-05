@@ -24,12 +24,16 @@
         "text": "csv/csv.md"
       },
       {
-        "title": "XML",
-        "text": "xml/xml.md"
-      },
-      {
         "title": "YAML",
         "text": "yaml/yaml.md"
+      },
+      {
+        "title": "XML - ElementTree",
+        "text": "xml/xml_et.md"
+      },
+      {
+        "title": "XML - lxml",
+        "text": "xml/xml_lxml.md"
       }
     ],
     "finish": {
