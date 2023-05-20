@@ -8,13 +8,17 @@
     },
     "assets": {
       "host01": [
-        {"file": "example.xml", "target": "/root/examples"},
-        {"file": "example.csv", "target": "/root/examples"},
-        {"file": "example.json", "target": "/root/examples"},
-        {"file": "example.yaml", "target": "/root/examples"}
+        {"file": "example.xml", "target": "/root"},
+        {"file": "example.csv", "target": "/root"},
+        {"file": "example.json", "target": "/root"},
+        {"file": "example.yaml", "target": "/root"}
       ]
     },
     "steps": [
+      {
+        "title": "Info",
+        "text": "info/info.md"
+      },
       {
         "title": "JSON",
         "text": "json/json.md"
