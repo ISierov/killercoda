@@ -11,7 +11,12 @@
         {"file": "example.xml", "target": "/root"},
         {"file": "example.csv", "target": "/root"},
         {"file": "example.json", "target": "/root"},
-        {"file": "example.yaml", "target": "/root"}
+        {"file": "example.yaml", "target": "/root"},
+        {"file": "pic1.png", "target": "/root/screenshots"},
+        {"file": "pic2.png", "target": "/root/screenshots"},
+        {"file": "pic3.png", "target": "/root/screenshots"},
+        {"file": "pic4.png", "target": "/root/screenshots"},
+        {"file": "pic5.png", "target": "/root/screenshots"}
       ]
     },
     "steps": [
